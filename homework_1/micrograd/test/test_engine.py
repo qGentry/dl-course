@@ -1,4 +1,4 @@
-from micrograd.engine import Value
+from engine import Value
 import torch
 
 
@@ -67,3 +67,7 @@ def test_more_ops():
     # backward pass went well
     assert abs(amg.grad - apt.grad.item()) < tol
     assert abs(bmg.grad - bpt.grad.item()) < tol
+
+
+test_more_ops()
+test_sanity_check()
